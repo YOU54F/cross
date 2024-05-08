@@ -52,6 +52,10 @@ main() {
         # FIXME: riscv64gc-unknown-linux-gnu is broken on rustc 1.75, see https://github.com/cross-rs/cross/issues/1423
         rustup toolchain add 1.70
         CROSS+=("+1.70")
+    elif [[ "${TARGET}" == "riscv64gc-unknown-linux-musl" ]]; then
+        # FIXME: riscv64gc-unknown-linux-gnu is broken on rustc 1.75, see https://github.com/cross-rs/cross/issues/1423
+        rustup toolchain add 1.70
+        CROSS+=("+1.70")
     fi
 
     if (( ${STD:-0} )); then
